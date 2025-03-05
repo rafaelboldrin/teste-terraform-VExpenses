@@ -28,8 +28,36 @@ Este repositório contém um código Terraform para provisionar uma infraestrutu
    - Chave SSH: Utiliza a chave pública em `~/.ssh/id_rsa.pub`.
    - User Data: Instala e configura o Nginx automaticamente.
    - Tags: `Name = "Instancia-Web"`, `Environment = "Producao
-  
-   - ## Alterações
+
+## Análise Técnica do Código Terraform
+
+O arquivo main.tf fornecido provavelmente cria uma infraestrutura básica na AWS, incluindo os seguintes recursos:
+VPC (Virtual Private Cloud):
+Uma VPC é criada para isolar os recursos da AWS em uma rede privada.
+## Subnet:
+Uma subnet é criada dentro da VPC para segmentar a rede.
+## Grupo de Segurança (Security Group):
+Um grupo de segurança é criado para controlar o tráfego de entrada e saída da instância EC2.
+## Key Pair:
+Um par de chaves é criado para permitir o acesso SSH à instância EC2.
+## Instância EC2:
+Uma instância EC2 é criada para hospedar a aplicação.
+## Observações sobre o Código Fornecido
+O código pode estar expondo a instância EC2 a acessos SSH de qualquer IP (0.0.0.0/0), o que não é seguro.
+Falta a configuração de automação para instalar e configurar o Nginx na instância EC2.
+Pode ser interessante adicionar tags aos recursos para melhor organização e gerenciamento.
+## Modificação e Melhoria do Código Terraform
+## Melhorias de Segurança
+Restringir Acesso SSH:
+Limitar o acesso SSH a um IP específico (ex.: seu IP público).
+## Adicionar Regras de Segurança para o Nginx:
+Permitir tráfego HTTP (porta 80) e HTTPS (porta 443).
+## Automação da Instalação do Nginx
+Usar o user_data para instalar e iniciar o Nginx automaticamente.
+## Outras Melhorias
+Adicionar tags para identificar os recursos:
+
+
    - Passo 1 - Ao invés de permitir acesso SSH de qualquer lugar, restringi o acesso apenas aos endereços IP específicos que precisam se conectar ao servidor. 
    -  Passo 2 - Limitei o tráfego de saída. Ao invés de permitir todo o tráfego de saída, especifiquei apenas os protocolos e portas necessários. 
    -  Passo 3 - Usei grupos de segurança por função, ou seja, criei grupos de segurança diferentes para diferentes funções ou serviços em sua infraestrutura. Isso ajuda 
