@@ -58,12 +58,4 @@ Usar o user_data para instalar e iniciar o Nginx automaticamente.
 Adicionar tags para identificar os recursos:
 
 
-   - Passo 1 - Ao invés de permitir acesso SSH de qualquer lugar, restringi o acesso apenas aos endereços IP específicos que precisam se conectar ao servidor. 
-   -  Passo 2 - Limitei o tráfego de saída. Ao invés de permitir todo o tráfego de saída, especifiquei apenas os protocolos e portas necessários. 
-   -  Passo 3 - Usei grupos de segurança por função, ou seja, criei grupos de segurança diferentes para diferentes funções ou serviços em sua infraestrutura. Isso ajuda 
-a minimizar o impacto de uma possível violação.
-    - Passo 4 - Revisei e atualizei regularmente as regras de segurança para garantir que elas ainda sejam necessárias e estejam alinhadas com as melhores práticas de 
-segurança.
-  - Passo 5 - Implementei monitoramento e alertas para detectar e responder rapidamente a atividades suspeitas. Para isso, usei serviços como AWS CloudTrail e AWS 
-Config para rastrear mudanças e atividades.
-  - Passo 6 - Apliquei o princípio do menor privilégio, garantindo que cada recurso tenha apenas as permissões necessárias para realizar suas funções.
+   Para fortalecer a segurança da sua infraestrutura, restringi o acesso SSH apenas aos endereços IP específicos que precisam se conectar ao servidor. Além disso, limitei o tráfego de saída, especificando apenas os protocolos e portas necessários. Utilizei grupos de segurança diferentes para diferentes funções ou serviços, minimizando o impacto de uma possível violação. Também revisei e atualizei regularmente as regras de segurança para garantir que elas ainda sejam necessárias e estejam alinhadas com as melhores práticas de segurança. Implementei monitoramento e alertas para detectar e responder rapidamente a atividades suspeitas, usando serviços como AWS CloudTrail e AWS Config para rastrear mudanças e atividades. Por fim, apliquei o princípio do menor privilégio, garantindo que cada recurso tenha apenas as permissões necessárias para realizar suas funções.
